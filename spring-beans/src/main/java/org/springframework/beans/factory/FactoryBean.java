@@ -24,9 +24,15 @@ import org.springframework.lang.Nullable;
  * interface, it is used as a factory for an object to expose, not directly as a
  * bean instance that will be exposed itself.
  *
+ * BeanFactory接口是用来实现，这些对象本来就是一个对象工厂，如果bean实现了这个接口，
+ * 它将被用作暴露对象的工厂，而不是直接作为将要暴露的bean实例
+ *
  * <p><b>NB: A bean that implements this interface cannot be used as a normal bean.</b>
  * A FactoryBean is defined in a bean style, but the object exposed for bean
  * references ({@link #getObject()}) is always the object that it creates.
+ *
+ * 注意：bean实现了这个接口就不能当作是一个普通bean了。
+ * FactoryBean定义了bean的类型，但是为bean引用暴露对象，始终是由它创建的。
  *
  * <p>FactoryBeans can support singletons and prototypes, and can either create
  * objects lazily on demand or eagerly on startup. The {@link SmartFactoryBean}
